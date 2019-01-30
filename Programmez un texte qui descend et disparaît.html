@@ -1,0 +1,37 @@
+<!--1. La structure de la page.
+La structure HTML basique du document indique au navigateur que la page est un document HTML5. La partie head
+décrit les informations invisibles comme le titre de la page et où trouver le fichier CSS.
+La partie body est prête à accueillir le contenu de la prochaine étape. Vous pouvez prendre des préfixes CSS sur
+shoulprefix.com afin d'assurer une compatibilité maximale entre navigateurs-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animated Text</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="Programmez un texte qui descend et disparaît.css"/>
+</head>
+
+<!--2. Créez le conteneur.
+    Le HTML servant à décrire le contenu est composé du conteneur sentence, qui lui-même est composé d'un conteneur words
+    servant à stocker les mots à animer.
+    Tous les mots qui s'animent se trouvent dans une balise span pour qu'on puisse les mettre en forme et les animer
+    un par un en CSS dans une étape ultérieure.
+-->
+
+<body>
+    <h2 class="sentence">
+        <span>Discipline découle de</span>
+        <div class="words">
+        <span>engagement</span>
+        <span>persévérance</span>
+        <span>dévouement</span>
+        <span>entraînement</span>
+        <span>aspiration</span>
+        <span>éducation</span>
+        </div>
+    </h2>
+</body>
+</html>

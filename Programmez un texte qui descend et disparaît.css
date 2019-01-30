@@ -1,0 +1,67 @@
+/* 3. Le CSS.
+Le HTML fini, donc créez un nouveau fichier du nom de "Programmez un texte qui descend et disparaît".
+La première règle à insérer dans ce fichier sera la définition de la présentation de tous les éléments
+span se trouvant dans le conteneur sentence. Nous appliquerons cette règle à la première phrase, qui n'est
+pas animée, ainsi qu'aux mots qui eux, le sont. Ces règles définissent la couleur et la taille par défaut,
+et font en sorte que le texte ne se retrouve pas sur plusieurs lignes.*/
+
+.sentence span{
+    color: #444;
+    white-space: nowrap;
+    font-size: 200%;
+    font-weight: normal;
+}
+
+/*4. Animez les mots.
+Les éléments span se trouvant dans la classe words sont les éléments que nous devons animer. Nous allons
+les placer avec un positionnement relatif, et leur opacité sera au début de zéro afin q'uils soient invisibles. Nous
+allons également leur appliquer une animation appelée animateWords, qui durera cinq secondes et se répétera à l'inifini
+avec un effet de type ease-in.*/
+
+.words span{
+    position: relative;
+    opacity: 0;
+    animation: animateWords 5s ease-in-out infinite;
+}
+
+/*5. Retardez les mots et la couleur.
+Pour que l'effet fonctionne, les mots enfants ne doivent pas tous lancer leur animation au même moment. Pour cela, nous utilisons
+le sélecteur :nth-child afin de faire référence aux mots, et dans lequel nous indiquons le délai de l'animation de chaque mot
+se rallonge de trois secondes par rapport au mot précédent ; ajoutez ici
+du CSS si vous projetez d'avoir plus de mots.*/
+
+.words span:nth-child(1){
+    animation-delay: 0s;
+    color: #678a6b;
+}
+.words span:nth-child(2){
+    animation-delay: 3s;
+    color: #bcd292;
+}
+.words span:nth-child(3) {
+    animation-delay: 6s;
+    color: #e7d7fc;
+}
+.words span:nth-child(4){
+    animation-delay: 9s;
+    color: #dec1f5;
+}
+.words span:nth-child(5){
+    animation-delay: 12s;
+    color: #8769ac;
+}
+.words span:nth-child(6){
+    animation-delay: 15s;
+    color: #e7d7fc;
+}
+
+/*6. Animez la description.
+L'étape finale est de déterminer ce qui se produit dans l'animation animateWords qui a précédemment servi aux mots.
+Cette animation indique aux mots de prendre comme position de départ leur position initiale, avec une opacité
+de 1 afin d'être complètement visibles. Les mots s'animeront pour atteindre un état final situé verticalement cinq caractères sous leur psoition de départ, et seront
+invisibles avec une opacité de 0.*/
+
+@keyframes animateWords {
+    from { opacity: 1; animation-timming-function: ease-in; top: 0; }
+to {opacity: 0; top: 5em;}
+}
